@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Yumemi Docs</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    
+    <link rel="stylesheet" href="./public/css/themeable.css">
+
+</head>
+
+<body>
+    <div data-app id="main">少女祈祷中...</div>
+
+    <script>
+        window.$docsify = {
+            el: '#main',
+            name: 'Yumemi Docs',
+            repo: 'https://github.com/dcyuki/YumemiBot',
+            loadSidebar: true,
+            alias: {
+                '/.*/_sidebar.md': '/_sidebar.md',
+                '/.*/_navbar.md': '/_navbar.md'
+            },
+            subMaxLevel: 4,
+            loadNavbar: true,
+            coverpage: true,
+            onlyCover: true,
+
+            themeable: {
+                readyTransition: true, // default
+                responsiveTables: true  // default
+            },
+
+            search: {
+
+                placeholder: '搜索',
+                noData: '电波传达不到哦...',
+                hideOtherSidebarContent: true,
+                depth: 6,
+            },
+
+            copyCode: {
+                buttonText: '点击复制',
+                errorText: '错误',
+                successText: '已复制'
+            },
+            // plugins: [
+            // 	EditOnGithubPlugin.create('https://github.com/docsifyjs/docsify/blob/master/docs/')
+            // ]
+
+        }
+    </script>
+    <!-- Docsify v4 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+    <!-- Themeable -->
+    <script src="./public/js/themeable.min.js"></script>
+    <!-- Search -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+    <!-- Copy -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+    <!-- Github Edit -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
+    <!-- Image -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+
+</body>
+
+</html>
