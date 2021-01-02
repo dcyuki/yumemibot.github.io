@@ -16,20 +16,24 @@ npm install
 
 ### 目录结构
 
-> 修改`config_example`目录名称为`config`，并正确配置添加`command.yml`、`setting.yml`、`serve.yml`所对应的参数
+> 修改`config_example`目录名称为`config`，并正确添加`botSetting.yml`文件所对应的参数
 
 ```
 YumemiBot
-├─ yumemi                   bot 目录
-│  ├─ config                配置信息
-│  │  ├─ command.yml        正则匹配
-│  │  ├─ serve.yml          插件设置
-│  │  └─ setting.yml        基本参数（QQ 号，群号）
-│  ├─ data                  资源目录
-│  ├─ modules               插件目录（存放编写好的插件）
-│  ├─ message.js            消息处理
-│  └─ tool.js               自定义工具类函数
-└─ app.js                   程序主入口（用于登录 QQ）
+├─ yumemi                     bot 目录
+│  ├─ config                  配置信息
+│  │  ├─ boss.yml             会战信息
+│  │  ├─ botSetting.yml       基本参数（QQ 号、群号等信息）
+│  │  ├─ command.yml          正则匹配
+│  │  └─ pluginParam.yml      插件参数（模块多参数配置文件）
+│  ├─ data                    资源目录
+│  │  ├─ db                   数据库文件
+│  │  └─ images               图片资源
+│  ├─ plugins                 插件目录（存放编写好的插件）
+│  ├─ message.js              消息监听处理函数
+│  ├─ plugins.js              模块自动加载函数
+│  └─ tool.js                 自定义工具类函数
+└─ app.js                     程序主入口（用于登录 QQ）
 ```
 
 ### 启动程序
@@ -40,6 +44,11 @@ YumemiBot
 node app.js
 ```
 
-如上述步骤无误，在群内发送`ver`即可收到以下回复
+如上述步骤无误  
+bot 启动成功后会自动在`config`目录下生成`pluginSetting.yml`文件
+
+> 当然，如果你有 js 的相关知识，随时都可以编写自己的插件，详情可在 [插件开发](develop/) 一栏查看
+
+!> 在群内发送`ver`即可收到以下回复，所有模块 **默认关闭** ，可发送`list`查看服务列表自行启用
 
 ![ver](../public/images/demo/ver.png)
