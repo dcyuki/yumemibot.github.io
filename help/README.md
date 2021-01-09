@@ -82,7 +82,7 @@
 - 补充说明
   + 本功能需要bot有群主权限  
 
-![来了来了](../public/images/emoji/running.jpg)
+![在做了在做了](../public/images/emoji/newProject.jpg)
 
 ### 买药助手
 

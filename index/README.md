@@ -1,11 +1,11 @@
 ### 项目介绍
 
 > 本项目是一个基于 [OneBot](https://github.com/howmanybots/onebot) 协议，使用 [JavaScript](https://www.javascript.com/) 语言开发的 [QQ](https://im.qq.com/) 机器人  
-> 代码全由个人编写维护，目前源码写的就跟 **Shit** 一样，处于`能 跑 就 行`的状态，日后会不断优化
+> 在这之前我从未接触过 [Nodejs](https://nodejs.org) ，故此项目所写的东西可能会让大家血压升高  
+> 代码全由个人编写维护，源码写的就跟 **Shit** 一样，处于`能 跑 就 行`的状态，日后会不断优化
 
 Yumemi 出自于日语 **ユメミ**，一时兴起起得名字，毕竟我经常做白日梦嘛（  
 暂时没有中文名字，**夢見**、**結女実**、**優芽美**．．．汉字有好多好多啦，想叫啥都行  
-在这之前我从未接触过 [Nodejs](https://nodejs.org) ，故此项目所写的东西可能会让大家血压升高  
 图片来自 [Pixiv](https://www.pixiv.net)，无意间在首页看到的，觉得挺好看的就拿来当做 **Yumemi** 的头像了，id`77959674`，侵删
 
 ![电波传达不到哦...](../public/images/avatar/yumemi.jpg "id:77959674")
