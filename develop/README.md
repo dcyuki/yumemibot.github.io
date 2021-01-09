@@ -12,9 +12,7 @@
 // plugins/hello/index.js
 module.exports = (bot, messageData, setting) => {
 
-  if (messageData.raw_message === '你好') {
-    bot.sendGroupMsg(messageData.group_id, '你好世界')
-  }
+   bot.sendGroupMsg(messageData.group_id, '你好世界')
 }
 ```
 
@@ -65,3 +63,4 @@ module.exports = (bot, messageData, setting) => {
   + sender
     + Q 号 user_id
     + 昵称 nickname
+  + 消息 raw_message
