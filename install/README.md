@@ -28,6 +28,7 @@ account:
 master: your master qq
 # bot 群聊
 group:
+  # 可填写多个群号，true 为监听该群
   your group number: true
   your group number: false
 ```
