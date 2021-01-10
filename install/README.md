@@ -16,6 +16,7 @@ npm install
 
 ### 目录结构
 
+> 修改`data/db/yumemi.db.example`数据库文件为`yumemi.db`  
 > 修改`config_example`目录名称为`config`，并正确添加`botSetting.yml`文件所对应的参数
 
 botSetting.yml 配置参数
@@ -68,7 +69,7 @@ npm start
 
 !> 在群内发送`ver`即可收到以下回复，所有模块 **默认关闭** ，可发送`list`查看服务列表自行启用  
 
-- 启用命令
+- 开启模块
   + `开启 | 关闭` + `模块名`
 - 正则公式
   + `^(开启|启用|打开|关闭|禁用)[\s]?[a-zA-Z]+$`
