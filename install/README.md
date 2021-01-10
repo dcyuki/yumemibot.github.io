@@ -5,7 +5,7 @@
 > 首先 clone 项目仓库（在此之前你需要安装并掌握 [nodejs](https://nodejs.org) 的相关知识）
 
 ```
-git clone https://gitee.com/Dc_Yuki/YumemiBot.git
+git clone https://github.com/dcyuki/YumemiBot.git
 ```
 
 > 使用 npm 安装 node 依赖模块
