@@ -4,4 +4,5 @@
 * [Install](install/)
 * [Develop](develop/)
 * [Help](help/)
+* [Issues](issues/)
 * [Changelog](changelog/)
