@@ -1,6 +1,6 @@
 ### 简单实例
 
-!>由于 yumemi 还在初期开发阶段，项目结构随时都有可能大改，暂不详细介绍，此处仅给出简单示例
+!> 这里是正在施工的 **插件开发** 文档，不定时更新
 
 - 在编写模块前，你需要先在`plugins`目录下，创建一个文件夹来存放模块文件  
 - 例如`plugins/hello`，`hello`为你的插件名，命名无规范限制 ~~你自己看得懂就行~~  
@@ -10,9 +10,8 @@
 
 ```javascript
 // plugins/hello/index.js
-module.exports = (bot, messageData, setting) => {
-
-   bot.sendGroupMsg(messageData.group_id, '你好世界')
+module.exports = (messageData, setting) => {
+   api.sendGroupMsg(messageData.group_id, '你好世界')
 }
 ```
 
@@ -39,17 +38,16 @@ hello:
 
 #### 参数说明
 
-!> `bot`、`messageData`、`setting`  
-这三个对象正是在插件运行时传入的，也是 **必须接收** 的  
+!> `messageData`、`setting`，这两个参数正是在插件运行时传入的，也是 **必须接收** 的  
 所以下面这段代码是在编写时 **必须遵守** 的格式，花括号中可随意编写你的插件逻辑
 
 ```javascript
-module.exports = (bot, messageData, setting) => {
+module.exports = (messageData, setting) => {
   // 此处可随意编写你的插件逻辑
 }
 ```
 
-- `bot`是 QQ 的实例对象，以下为几个较常用的 API
+- `api`是 QQ 的实例对象，以下为几个较常用的 API
   + 私发 sendPrivateMsg(user_id, message)
   + 群发 sendGroupMsg(group_id, message)
   + 踢人 setGroupKick(group_id, user_id)

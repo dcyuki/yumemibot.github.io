@@ -43,22 +43,22 @@ group:
 YumemiBot
 ├─ yumemi                     bot 目录
 │  ├─ config                  配置信息
+│  │  ├─ api.yml              aip 配置
 │  │  ├─ boss.yml             会战信息
-│  │  ├─ botSetting.yml       基本参数（QQ 号、群号等信息）
+│  │  ├─ botSettings.yml      基本参数（QQ 号、群号等信息）
 │  │  ├─ command.yml          正则匹配
 │  │  └─ pluginParam.yml      插件参数（模块多参数配置文件）
 │  ├─ data                    资源目录
 │  │  ├─ db                   数据库文件
 │  │  └─ images               图片资源
 │  ├─ plugins                 插件目录（存放编写好的插件）
-│  ├─ message.js              消息监听处理函数
-│  ├─ plugins.js              模块自动加载函数
-│  └─ tool.js                 自定义工具类函数
+│  ├─ serve.js                消息监听处理函数
+│  └─ tools.js                自定义工具类函数
 └─ app.js                     程序主入口（用于登录 QQ）
 ```
 
 > 如上述步骤无误  
-> bot 启动成功后会在`config`目录下自动生成`pluginSetting.yml`文件  
+> bot 启动成功后会在`config`目录下自动生成`pluginSettings.yml`文件  
 > 当然，如果你有`js`的相关知识，随时都可以编写自己的插件，详情可在 [插件开发](develop/) 一栏查看
 
 ### 启动程序
