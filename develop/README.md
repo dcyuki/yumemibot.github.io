@@ -11,7 +11,7 @@
 ```javascript
 // plugins/hello/index.js
 module.exports = (messageData, setting) => {
-   api.sendGroupMsg(messageData.group_id, '你好世界')
+   bot.sendGroupMsg(messageData.group_id, '你好世界')
 }
 ```
 
@@ -47,7 +47,7 @@ module.exports = (messageData, setting) => {
 }
 ```
 
-- `api`是 QQ 的实例对象，以下为几个较常用的 API
+- `bot`是 QQ 的实例对象，以下为几个较常用的 API
   + 私发 sendPrivateMsg(user_id, message)
   + 群发 sendGroupMsg(group_id, message)
   + 踢人 setGroupKick(group_id, user_id)
@@ -58,7 +58,7 @@ module.exports = (messageData, setting) => {
 - `messageData`为发送消息的实例对象，以下为几个较常用的参数
   + 群号 group_id
   + 群名 group_name
+  + 消息 raw_message
   + sender
     + Q 号 user_id
     + 昵称 nickname
-  + 消息 raw_message
