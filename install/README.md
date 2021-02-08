@@ -67,7 +67,7 @@ YumemiBot
 npm start
 ```
 
-!> 在群内发送`ver`即可收到以下回复，所有模块 **默认关闭** ，可发送`list`查看服务列表自行启用  
+!> 在群内发送`ver`即可收到以下回复，部分模块 **默认关闭** ，可发送`lists`查看服务列表自行启用  
 
 ![version](../public/images/demo/version.png)
 

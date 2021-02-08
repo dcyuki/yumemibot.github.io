@@ -3,14 +3,14 @@
 !> 这里是正在施工的 **插件开发** 文档，不定时更新
 
 - 在编写模块前，你需要先在`plugins`目录下，创建一个文件夹来存放模块文件  
-- 例如`plugins/hello`，`hello`为你的插件名，命名无规范限制 ~~你自己看得懂就行~~  
+- 例如`plugins/hello`，`hello`为你的插件名，命名为 **a-z** 无其它严格限制 ~~你自己看得懂就行~~  
 - 创建成功后在当前目录下创建`index.js`，此名为固定命名，不可更改，否则需要 **手动** 加载引入
 
 以下为简单示例：
 
 ```javascript
 // plugins/hello/index.js
-module.exports = (messageData, setting) => {
+module.exports = messageData => {
    bot.sendGroupMsg(messageData.group_id, '你好世界')
 }
 ```
@@ -18,9 +18,8 @@ module.exports = (messageData, setting) => {
 然后在`config/command.yml`文件下添加以下参数：
 
 ```yaml
-# 此处的 key 值需要与插件文件夹名保持一致
-hello:
- - ^你好$
+# 此处的 key 值必须与插件文件夹名保持一致
+hello: ^你好$
 ```
 
 > 现在，**重启** 项目后，在群内发送`你好`，即可收到`你好世界`的回复  
@@ -38,22 +37,13 @@ hello:
 
 #### 参数说明
 
-!> `messageData`、`setting`，这两个参数正是在插件运行时传入的，也是 **必须接收** 的  
-所以下面这段代码是在编写时 **必须遵守** 的格式，花括号中可随意编写你的插件逻辑
-
-```javascript
-module.exports = (messageData, setting) => {
-  // 此处可随意编写你的插件逻辑
-}
-```
-
 - `bot`是 QQ 的实例对象，以下为几个较常用的 API
   + 私发 sendPrivateMsg(user_id, message)
   + 群发 sendGroupMsg(group_id, message)
   + 踢人 setGroupKick(group_id, user_id)
   + 禁言 setGroupBan(group_id, user_id)
 
-查看更多 API 可访问：https://github.com/takayama-lily/oicq/blob/master/docs/api.md
+查看更多 API 可访问：[oicq 相关文档](https://github.com/takayama-lily/oicq/blob/master/docs/api.md)
 
 - `messageData`为发送消息的实例对象，以下为几个较常用的参数
   + 群号 group_id
@@ -62,3 +52,24 @@ module.exports = (messageData, setting) => {
   + sender
     + Q 号 user_id
     + 昵称 nickname
+
+!> `messageData`，正是在插件执行时传入的，**并非必须接收**  
+下面这段代码是在编写时 **必不可少** 的格式，花括号内外都可随意编写你的代码
+
+```javascript
+// ... 此处的代码只会在项目运行时执行一次
+module.exports = messageData => {
+  // ... 花括号内的代码仅在每次调用时执行
+}
+```
+
+!> 当然，若你编写的插件不需要接收群内发送的消息，例如每日的买药提示，可以不传入 messageData 对象
+
+```javascript
+module.exports = () => {
+  console.log(`卖个萌 (*/ω＼*)`);
+}
+```
+
+这个时候你可能就要问了，我没有群号该如何发送消息呢？  
+别着急，yumemi 封装了一套 tools 类方法，下面将为你介绍相关 api
