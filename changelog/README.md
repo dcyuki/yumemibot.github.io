@@ -1,9 +1,19 @@
 ### 更新日志 <!-- {docsify-ignore} -->
 
 #### 下一个版本计划
-  - 基于 vue 重构 web 后台
+  - 基于 react 重构 web 后台
 
 > とある咕咕の更新日志
+
+#### 0.5.1 (2021.03.03)
+  - add plugin
+    + 新增 bilibili 动态监听
+    + 新增五子棋小游戏
+  - refactor code
+    + 添加国服公会排名查询
+  - fix bug
+    + 代码性能优化 & 数据修正
+    + 修复加入新群聊 pluginSettings 丢失的问题
 
 #### 0.5.0 (2021.02.08)
   - add plugin
@@ -14,7 +24,7 @@
     + 新增 groups 群聊信息自动添加
     + 新增 bot 自动同意加群及好友申请
     + 优化 command.yml 结构
-    + 封装 http ，schedule 至 tools.js
+    + 封装 http、schedule 至 tools.js
     + 移除 plugin 必须传入 settings 对象的约束
     + 重构色图
       - 本地存储图片，优化发送速度
