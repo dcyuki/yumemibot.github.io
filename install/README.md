@@ -20,21 +20,27 @@ npm install
 ### 目录结构
 
 > 修改`data/db/yumemi.db.example`数据库文件为`yumemi.db`  
-> 修改`config_example`目录名称为`config`，并正确添加`botSetting.yml`文件所对应的参数
+> 修改`config_example`目录名称为`config`，并正确添加`bot.yml`文件所对应的参数
 
-botSetting.yml 配置参数
+bot.yml 配置参数
 ```yaml
 # bot 账号
-account:
-  qq: your qq number
-  password: your qq password or password md5
-# bot 主人
-master: your master qq
-# bot 群聊
-group:
-  # 可填写多个群号，true 为监听该群
-  your group number: true
-  your group number: false
+qq:
+  # 维护组 QQ 账号
+  admin: 2225151531
+  # 主  人 QQ 账号
+  master: <your master qq number>
+  # 机器人 QQ 账号
+  account: <your bot qq number>
+  # 机器人 QQ 密码
+  password: <your bot qq password or 32bit md5>
+
+# web 服务
+web:
+  # 端口号
+  port: 80
+  # 域  名
+  domain: <you domain name or ip address>
 ```
 
 - **什么是 YAML**
@@ -48,20 +54,22 @@ YumemiBot
 │  ├─ config                  配置信息
 │  │  ├─ api.yml              aip 配置
 │  │  ├─ boss.yml             会战信息
-│  │  ├─ botSettings.yml      基本参数（QQ 号、群号等信息）
-│  │  ├─ command.yml          正则匹配
-│  │  └─ pluginParam.yml      插件参数（模块多参数配置文件）
+│  │  ├─ bot.yml              基本参数（QQ 号、群号等信息）
+│  │  ├─ chat.yml             bot 词库
+│  │  ├─ cmd.yml              正则配置
+│  │  ├─ group.yml            群聊配置（群内有人发送消息后会自动添加，无需手动配置）
+│  │  └─ param.yml            插件参数（模块多参数配置文件）
 │  ├─ data                    资源目录
 │  │  ├─ db                   数据库文件
 │  │  └─ images               图片资源
 │  ├─ plugins                 插件目录（存放编写好的插件）
-│  ├─ serve.js                消息监听处理函数
-│  └─ tools.js                自定义工具类函数
+│  ├─ serve.js                消息监听处理
+│  └─ tools.js                自定义工具类
 └─ app.js                     程序主入口（用于登录 QQ）
 ```
 
 > 如上述步骤无误  
-> bot 启动成功后会在`config`目录下自动生成`pluginSettings.yml`文件  
+> bot 启动成功后会在`yumemi`目录下自动生成`data`目录存放缓存  
 > 当然，如果你有`js`的相关知识，随时都可以编写自己的插件，详情可在 [插件开发](develop/) 一栏查看
 
 ### 启动程序
@@ -70,13 +78,13 @@ YumemiBot
 npm start
 ```
 
-!> 在群内发送`ver`即可收到以下回复，部分模块 **默认关闭** ，可发送`lists`查看服务列表自行启用  
+!> 群消息默认 **不会监听处理** ，在群内发送`开启群服务`即可打开，部分模块 **默认关闭** ，可发送`list`查看服务列表自行启用  
 
 ![version](../public/images/demo/version.png)
 
 - 开启模块
   + `开启 | 关闭` + `模块名`
 - 正则公式
-  + `^(开启|启用|打开|关闭|禁用)[\s]?[a-zA-Z]+$`
+  + `^(开启|启用|打开|关闭|禁用)[\s]?[a-z]+(18)?$`
 
 ![enable](../public/images/demo/enable.png)
