@@ -9,8 +9,8 @@
 - 简单、轻便、高效
 
 [Quick Start](index/)
-[Gitee](https://gitee.com/Dc_Yuki/YumemiBot)
-[Github](https://github.com/dcyuki/YumemiBot)
+[Gitee](https://gitee.com/dc_yuki/yumemi_bot)
+[Github](https://github.com/dcyuki/yumemi_bot)
 
 <!-- 背景图片 -->
 
