@@ -19,8 +19,8 @@ npm install
 
 ### 目录结构
 
-> 修改`data/db/yumemi.db.example`数据库文件为`yumemi.db`  
-> 修改`config_example`目录名称为`config`，并正确添加`bot.yml`文件所对应的参数
+> 修改`yumemi_bot/data/db/yumemi.db.example`数据库文件为`yumemi.db`  
+> 修改`yumemi_bot/config_example`目录名称为`config`，并正确添加`bot.yml`文件所对应的参数
 
 bot.yml 配置参数
 ```yaml
@@ -49,27 +49,27 @@ web:
 
 项目文件结构
 ```
-YumemiBot
-├─ yumemi                     bot 目录
-│  ├─ config                  配置信息
-│  │  ├─ api.yml              aip 配置
-│  │  ├─ boss.yml             会战信息
-│  │  ├─ bot.yml              基本参数（QQ 号、群号等信息）
-│  │  ├─ chat.yml             bot 词库
-│  │  ├─ cmd.yml              正则配置
-│  │  ├─ group.yml            群聊配置（群内有人发送消息后会自动添加，无需手动配置）
-│  │  └─ param.yml            插件参数（模块多参数配置文件）
-│  ├─ data                    资源目录
-│  │  ├─ db                   数据库文件
-│  │  └─ images               图片资源
-│  ├─ plugins                 插件目录（存放编写好的插件）
-│  ├─ serve.js                消息监听处理
+yumemi_bot
+├─ config                  配置信息
+│  ├─ api.yml                aip 配置
+│  ├─ boss.yml               会战信息
+│  ├─ bot.yml                基本参数（QQ 号、群号等信息）
+│  ├─ chat.yml               bot 词库
+│  ├─ cmd.yml                正则配置
+│  ├─ groups.yml             群聊配置（bot 登录成功时会自动校验，无需手动配置）
+│  └─ params.yml             插件参数（插件默认参数配置文件）
+├─ data                    资源目录
+│  ├─ db                     数据库文件
+│  └─ images                 图片资源
+├─ plugins                 插件目录（存放编写好的插件）
+├─ utils                   工具目录
+│  ├─ sqlite.js               数据库类
 │  └─ tools.js                自定义工具类
-└─ app.js                     程序主入口（用于登录 QQ）
+└─ app.js                  程序主入口（用于登录 QQ 、监听消息）
 ```
 
 > 如上述步骤无误  
-> bot 启动成功后会在`yumemi`目录下自动生成`data`目录存放缓存  
+> bot 启动成功后会在`data`目录下，自动生成`oicq_data`文件夹存放 QQ 账号相关文件  
 > 当然，如果你有`js`的相关知识，随时都可以编写自己的插件，详情可在 [插件开发](develop/) 一栏查看
 
 ### 启动程序
