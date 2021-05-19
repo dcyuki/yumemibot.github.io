@@ -15,6 +15,8 @@ git clone https://gitee.com/dc_yuki/yumemi_bot.git
 
 ```
 npm install
+// or
+cnpm i
 ```
 
 ### 目录结构

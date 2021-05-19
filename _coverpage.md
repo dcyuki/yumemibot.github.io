@@ -2,7 +2,7 @@
 
 ![logo](./public/images/avatar/logo.png)
 
-# YumemiBot <small>0.5.2</small>
+# YumemiBot <small>0.6.1</small>
 
 > まるで、夢みたい...
 
