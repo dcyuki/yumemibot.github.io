@@ -1,8 +1,8 @@
 <!-- _coverpage.md -->
 
-![logo](./public/images/avatar/logo.png)
+![logo](./public/images/avatar/yumemi.png)
 
-# YumemiBot <small>0.6.1</small>
+# YumemiBot <small>0.6.2</small>
 
 > まるで、夢みたい...
 
