@@ -1,6 +1,6 @@
 ### 项目介绍
 
-> 本项目是一个基于 [OneBot](https://github.com/howmanybots/onebot) 协议，使用 [JavaScript](https://www.javascript.com/) 语言开发的 [QQ](https://im.qq.com/) 机器人  
+> 本项目是一个基于 [oicq](https://github.com/takayama-lily/oicq) 框架，使用 [TypeScript](https://www.typescriptlang.org/) 语言开发的 [QQ](https://im.qq.com/) 机器人   
 > 代码全由个人编写维护，源码写的就跟 **Shit** 一样，处于`能 跑 就 行`的状态，日后会不断优化
 
 - Yumemi 出自于日语 **ユメミ**，一时兴起起得名字，毕竟我经常做白日梦嘛（
