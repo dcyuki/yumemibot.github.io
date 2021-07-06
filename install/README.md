@@ -5,45 +5,38 @@
 > 首先 clone 项目仓库（在此之前你需要安装并掌握 [nodejs](https://nodejs.org) 的相关知识）
 
 ```
-// 国内用户建议使用 Gitee
 git clone https://github.com/dcyuki/yumemi_bot.git
 
+// 若网速较慢建议使用 Gitee
 git clone https://gitee.com/dc_yuki/yumemi_bot.git
 ```
 
 > 使用 npm 安装 node 依赖模块
 
 ```
-npm install
-// or
+npm i
+
+// 若网速较慢建议使用 cnpm
 cnpm i
 ```
 
 ### 目录结构
 
 > 修改`yumemi_bot/data/db/yumemi.db.example`数据库文件为`yumemi.db`  
-> 修改`yumemi_bot/config_example`目录名称为`config`，并正确添加`bot.yml`文件所对应的参数
+> 修改`yumemi_bot/config_example`目录名称为`config`，并正确添加`bots/bot_example.yml`文件所对应的参数
 
 bot.yml 配置参数
 ```yaml
 # bot 账号
 qq:
-  # 维护组 QQ 账号
-  admin: 2225151531
   # 主  人 QQ 账号
-  master: <your master qq number>
+  masters: <your master qq number array>
   # 机器人 QQ 账号
-  account: <your bot qq number>
-  # 机器人 QQ 密码
-  password: <your bot qq password or 32bit md5>
-
-# web 服务
-web:
-  # 端口号
-  port: 80
-  # 域  名
-  domain: <you domain name or ip address>
+  uin: <your bot qq number>
 ```
+
+!> 修改完成之后你可以将文件名修改任意数值 ~~主要是为了你自己方便识别~~  
+一般建议用 qq 号作为唯一标识，例如：`123456789.yml`
 
 - **什么是 YAML**
   + YAML 是一种专攻配置的语言，可读性高（JSON 有时确实让人眼花缭乱不是么？）
@@ -53,26 +46,25 @@ web:
 ```
 yumemi_bot
 ├─ config                  配置信息
+│  ├─ bots                   bot 目录
+│  │  └─ xxx.yml               QQ 号等信息（可存放多个）
+│  ├─ groups                 群聊目录（插件参数等配置）
+│  │  └─ xxx.yml               账号登录成功时会自动校验生成，无需手动配置
 │  ├─ api.yml                aip 配置
 │  ├─ boss.yml               会战信息
-│  ├─ bot.yml                基本参数（QQ 号、群号等信息）
 │  ├─ chat.yml               bot 词库
 │  ├─ cmd.yml                正则配置
-│  ├─ groups.yml             群聊配置（bot 登录成功时会自动校验，无需手动配置）
-│  └─ params.yml             插件参数（插件默认参数配置文件）
+│  ├─ info.yml               版本信息
+│  ├─ params.yml             插件参数（插件默认参数配置文件）
+│  ├─ sql.yml                sql 语句
+│  └─ web.yml                端口配置
 ├─ data                    资源目录
 │  ├─ db                     数据库文件
+│  ├─ dynamic                动态资源
 │  └─ images                 图片资源
 ├─ plugins                 插件目录（存放编写好的插件）
-├─ utils                   工具目录
-│  ├─ sqlite.js               数据库类
-│  └─ tools.js                自定义工具类
-└─ app.js                  程序主入口（用于登录 QQ 、监听消息）
+└─ services                服务目录
 ```
-
-> 如上述步骤无误  
-> bot 启动成功后会在`data`目录下，自动生成`oicq_data`文件夹存放 QQ 账号相关文件  
-> 当然，如果你有`js`的相关知识，随时都可以编写自己的插件，详情可在 [插件开发](develop/) 一栏查看
 
 ### 启动程序
 
@@ -80,13 +72,23 @@ yumemi_bot
 npm start
 ```
 
-!> 群消息默认 **不会监听处理** ，在群内发送`开启群服务`即可打开，部分模块 **默认关闭** ，可发送`list`查看服务列表自行启用  
+> 如上述步骤无误，根据控制台的提示输入密码及对应验证即可成功登录  
+> bot 登录成功后会在`data`目录下，自动生成`oicq`文件夹存放 QQ 账号相关缓存文件  
+> 当然，如果你有`js`的相关知识，随时都可以编写自己的插件，详情可在 [插件开发](develop/) 一栏查看
 
-![version](../public/images/demo/version.png)
+### 你好世界
 
-- 开启模块
-  + `开启 | 关闭` + `模块名`
-- 正则公式
-  + `^(开启|启用|打开|关闭|禁用)[\s]?[a-z]+(18)?$`
+登录成功后你将会收到一条私信（你填写的 masters）
+
+![wellcome](../public/images/demo/wellcome.png)
+
+!> 所有插件 **默认不会启用** ，在群内发送`开启群服务`即可全部打开，若只想启用部分模块，可发送`list`查看服务列表自行启用  
+
+![join](../public/images/demo/join.png)
+
+你可以输入`>enable <模块名>`来启用插件  
+当然，如果你不习惯使用命令行的方式来操作，也可以输入`打开 <模块名>`
+
+>更多关于插件的控制可以查看 [插件管理](plugin/) 一栏
 
 ![enable](../public/images/demo/enable.png)
