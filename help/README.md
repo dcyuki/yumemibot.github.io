@@ -91,7 +91,7 @@
   + 为什么没有做抽一井的功能？
   + 个人认为做出来会大大减少抽卡的趣味性，模拟抽卡本身就是为了趣味性和爽，你看那傻子必得他不香么（  
 
-![偷税](../public/images/emoji/comfort.jpg)
+![偷税](../public/images/emoji/comfort.jpg)  
 ![gacha](../public/images/demo/gacha.png)
 
 !> 该功能暂时移除
@@ -236,6 +236,7 @@
 - 补充说明
   + 如果你是日服公会，在 **报刀** 前面输入 boss 编号可指定对应 boss ，例如`2 报刀 3000000`或`5 尾刀`
   + 若未指定 boss 编号则会默认指定当前第一个存活的 boss
+  + ~~初次报刀后将会收到一条私信，系统已为你自动创建账号~~（该功能暂时移除）
 
 ![createUser](../public/images/demo/createUser.png)
 ![insertFight](../public/images/demo/insertFight.png)
@@ -247,9 +248,8 @@
   + `^\[CQ:at,qq=\d+,text=@.*\]\s?[1-5]?\s?\u4EE3\u62A5\s?\d*$`
 - 补充说明
   + 日服指定 boss 与报刀同理，在 **代报** 前面指定 boss 编号即可
-![acting](../public/images/demo/acting.png)
 
-![updateFight](../public/images/demo/updateFight.png)
+![acting](../public/images/demo/acting.png)
 
 #### 撤销出刀
 - 举个栗子
@@ -265,7 +265,7 @@
 - 正则公式
   + `^((\u5468\u76EE|boss|\u8840\u91CF)\s?[1-9]\d*\s?){1,3}$`
 - 补充说明
-  + 以上参数并非必填项，若只需要修改其中一项单独输入指令即可，例如`boss 1 血量 1000000`
+  + 以上参数并非必填项，若只需要修改其中一项单独输入指令即可，例如`boss 1`
 
 ![updateBattle](../public/images/demo/updateBattle.png)
 
@@ -300,10 +300,13 @@
 - 补充说明
   + 修改出刀信息后会自动纠正 **当前周目** boss 的血量，无需手动矫正，若已跨周目不建议单独修改报刀数据
 
-#### 挂树报时
+![updateFight](../public/images/demo/updateFight.png)
+
+#### 挂树筛刀
 
 - 举个栗子
   + ~会长我 xcw 暴击啦~ 发送`挂树`或`sl`会记录当前时间
+  + 如果需要筛刀，也可以指定当前伤害值
 - 正则公式
   + `^(挂树|sl)$`
 

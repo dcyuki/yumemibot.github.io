@@ -89,6 +89,6 @@ npm start
 你可以输入`>enable <模块名>`来启用插件  
 当然，如果你不习惯使用命令行的方式来操作，也可以输入`打开 <模块名>`
 
->更多关于插件的控制可以查看 [插件管理](plugin/) 一栏
+>更多关于插件的控制可以查看 [指令操作](terminal/) 一栏
 
 ![enable](../public/images/demo/enable.png)

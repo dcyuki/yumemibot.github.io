@@ -2,6 +2,7 @@
 
 * [Index](index/)
 * [Install](install/)
+* [Terminal](terminal/)
 * [Develop](develop/)
 * [Help](help/)
 * [Issues](issues/)
