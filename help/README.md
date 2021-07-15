@@ -177,6 +177,7 @@
   + `^搜图$`
 - 补充说明
   + 不要发一些奇怪的图片，来源不明的图片识别度较低，本来是为了方便我搜本子做出来的（
+  + 精准度低于`50％`的图片将不会显示略缩图
 
 ![saucenao](../public/images/demo/saucenao.png)
 ![saucenaoed](../public/images/demo/saucenaoed.png)
